@@ -1,6 +1,6 @@
 <?php
 
-require_once "./controllers/error.php";
+require_once "./controllers/errorController.php";
 // require CONTROLLERS . "/error.php";
 class Router 
 {

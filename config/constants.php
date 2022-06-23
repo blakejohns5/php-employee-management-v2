@@ -16,11 +16,11 @@ define('BASE_URL', preg_replace("/\/$/", '', PROTOCOL . DOMAIN . str_replace(arr
 define("LIBS", BASE_PATH . '/src/libs');   
 
 //CONTROLLERS
-define("CONTROLLERS", BASE_PATH . '/src/controllers');
+define("CONTROLLERS", BASE_PATH . '/controllers');
 
 //VIEWS
-define("VIEWS", BASE_PATH . '/src/views');
+define("VIEWS", BASE_PATH . '/views');
 
 //MODELS
-define("MODELS", BASE_PATH . '/src/models');
+define("MODELS", BASE_PATH . '/models');
 
