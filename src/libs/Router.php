@@ -30,8 +30,6 @@ class Router
         {            
             $controller = new Error();
         }
-
-
     }
 }
 
