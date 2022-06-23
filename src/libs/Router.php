@@ -28,7 +28,7 @@ class Router
             var_dump($controller);
         }else
         {            
-            $controller = new Error();
+            $controller = new ErrorController();
         }
     }
 }
