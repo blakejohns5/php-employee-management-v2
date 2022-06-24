@@ -33,11 +33,19 @@ class Router
             require_once $fileController;
             $controllerClass = ucfirst(($url[0]));
             $controller = new $controllerClass();
-            var_dump($controller);
-        }else
+            
+            if (isset($url[1])) {
+                if (method_exists($controller, $url[1])) {
+                  $controller->{$url[1]}();
+                } else {
+                    $controller = new ErrorController();
+                }
+            }
+        } else
         {            
             $controller = new ErrorController();
         }
     }
 }
+
 

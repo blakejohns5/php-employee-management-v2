@@ -3,17 +3,17 @@
 // require_once "./library/employeeController.php";
 session_start();
 
-if(isset($_GET['id'])){
+// if(isset($_GET['id'])){
     
-    edit($_GET['id']);
-}
+//     edit($_GET['id']);
+// }
 
-if(!isset($_SESSION['name'])){
-  header("Location: ./../index.php");
-} else {
-  $name = $_SESSION['name'];
+// if(!isset($_SESSION['name'])){
+//   header("Location: ./../index.php");
+// } else {
+//   $name = $_SESSION['name'];
 
-}
+// }
 
 
 ?>
@@ -36,7 +36,9 @@ if(!isset($_SESSION['name'])){
 </head>
 <body >
     <section class='bg-light rounded ml-5 mr-5 pt-5 pb-5'>
-    <form class="my-4 mx-4" action="../src/library/employeeController.php" method= "post">
+
+      <!-- FORM START -->
+    <form class="my-4 mx-4" action="<?= BASE_URL . 'employee/editEmployee'?>" method= "post">
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="firstName">First name</label>
