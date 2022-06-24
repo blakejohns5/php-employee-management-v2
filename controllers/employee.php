@@ -12,5 +12,8 @@ class Employee extends Controller
     function editEmployee() 
     {
         echo 'editing employee from employeeController';
+        $varOne = $_POST;
+        var_dump($varOne);
+        
     }
 }
