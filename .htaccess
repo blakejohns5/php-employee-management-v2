@@ -1,5 +1,8 @@
 RewriteEngine On
 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
 
 # When you enter an URL, first will load index.php
 RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]

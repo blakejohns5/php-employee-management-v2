@@ -9,13 +9,21 @@ class Router
         echo "New router";
         echo "<br>";
 
-        $url = $_GET['url'];
+        $url = isset($_GET['url']) ? $_GET['url'] : null;
         // echo $url;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
         var_dump($url);
 
-        // $fileController = CONTROLLERS . $url[0] . '.php';  // refer to file in controllers folder
+        if (empty($_GET['url']))
+        {
+            $fileController = CONTROLLERS . "/main.php";
+            require_once  $fileController;
+            $controller = new Main();
+            return false; // ??? How it works?
+        }
+
+        $fileController = CONTROLLERS . $url[0] . '.php';  // refer to file in controllers folder
 
         $fileController = "./controllers/" . $url[0] . '.php';
         echo "<p>$fileController</p>";
