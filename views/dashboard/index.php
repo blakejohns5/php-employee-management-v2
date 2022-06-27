@@ -1,10 +1,4 @@
 <?php
-session_start();
-if(!isset($_SESSION['name'])){
-  header("Location: ./../index.php");
-} else {
-  $name = $_SESSION['name'];
-}
 
 ?>
 <!DOCTYPE html>
