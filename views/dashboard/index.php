@@ -66,8 +66,30 @@ if(!isset($_SESSION['name'])){
                 </tr>
         </thead>
         <tbody id="tableEmployee">
-        </tbody>
-        <tbody>
+          <?php 
+          // echo '<pre>';
+          //  var_dump($this->employeeData);
+          //  echo '<br><br><br><pre>';
+            foreach ($this->employeeData as $index => $employee) {
+              echo "<tr>";
+              // echo "<td class='tg-0lax'>" . $employee["id"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["name"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["lastName"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["email"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["gender"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["city"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["streetAddress"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["state"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["age"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["postalCode"] . "</td>";
+              echo "<td class='tg-0lax'>" . $employee["phoneNumber"] . "</td>";
+              echo "<td colspan='2' class='tg-0lax'>
+              <a class='btn btn-secondary' href='?controller=employee&action=getEmployee&id=" . $employee["id"] . "'>Edit</a>
+              <a class='btn btn-danger' href='?controller=employee&action=deleteEmployee&id=" . $employee["id"] . "'>Delete</a>
+              </td>";
+              echo "</tr>";
+            }
+            ?>
         </tbody>
     </table>
 </div>

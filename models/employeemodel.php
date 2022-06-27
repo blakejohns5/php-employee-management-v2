@@ -8,7 +8,7 @@ class EmployeeModel extends Model
     parent::__construct();
   }
 
-  function updateEmployee()
+  function update()
   {
     echo '<p>Adding employee from employee model.<p>';
   }
