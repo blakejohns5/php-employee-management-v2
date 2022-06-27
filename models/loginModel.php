@@ -32,22 +32,41 @@ class LoginModel extends Model
   function authUser($email, $password)
   {
     try {
-        $query = $this->db->connect()->prepare("SELECT * FROM users");        
-        $query->execute();
-        print_r ($query);
-        $user = $query->fetchAll();
-        echo "<pre>";
-        print_r($user);
-        return $user;
+        // $query = $this->db->connect()->prepare("SELECT * FROM users");        
+        // $query->execute();
+        // print_r ($query);
+        // $user = $query->fetchAll();
+        // echo "<pre>";
+        // print_r($user);
+        // return $user;
+
+        $query = $this->db->connect()->prepare("SELECT * FROM users WHERE email = '$email'");               
+        $query->execute();        
+        $userData = $query->fetchAll();  
+         
+        // print_r($userData[0]['email']);     
+        // print_r($userData[0]['password']);
+        if (count ($userData) > 0 )
+        {
+          $user = $userData[0];
+          if (password_verify($password, $user['password'])) {
+            echo "dsdfsdfsdf";
+            // session_start();  
+            $_SESSION['userId'] = $user['id'];
+              // $_SESSION['time'] = time();
+              // $_SESSION['lifeTime'] = 60 * 10;              
+              return true;
+          }
+        }
+        return false;
+        
+        // require_once VIEWS . "/dashboard";
   
-
-
      } catch (PDOException $e) {
         echo 'This user doens´t exist';
-        return false;
+        
     }   
-
-
+    return false;
 }
 
 

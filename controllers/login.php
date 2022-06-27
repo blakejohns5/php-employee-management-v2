@@ -14,10 +14,18 @@ class Login extends Controller
         // print_r ($_POST); 
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $userDb = $this->model->authUser($_POST['email'], $_POST['password']);
-        // echo $email;
-        // echo $password;
-        // print_r($userDb);
+        $userDb = $this->model->authUser($email, $password);
+
+        if (!$userDb)
+        {
+            header('Location: ' . BASE_URL . '/login');
+            exit();
+        } else {
+            header('Location: ' . BASE_URL . '/dashboard/getAllEmployees');
+            exit();
+        }
+        
+        
 
         // if ($_POST['email'] === $userDb['email'])
         // {
