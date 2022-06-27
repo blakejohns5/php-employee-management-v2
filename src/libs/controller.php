@@ -18,7 +18,6 @@ class Controller
       $modelName = $model . 'Model';   // ??? Need capital letter?
       $this->model = new $modelName();
     }
-
   }
 }
 
