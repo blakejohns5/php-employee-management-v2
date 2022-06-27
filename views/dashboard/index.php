@@ -27,7 +27,7 @@
         </li>
       </ul>
       <div class="d-flex justify-content-around">
-        <h4>BIENVENIDO, <?php echo strtoupper($name); ?></h4>
+        <h4>BIENVENIDO </h4>
         <form method="post" action="./library/loginController.php">
             <button class="btn btn-primary" type="submit" name="logout">LOG OUT</button>
         </form>

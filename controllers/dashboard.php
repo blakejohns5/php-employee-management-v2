@@ -10,7 +10,6 @@ class Dashboard extends Controller
     // // calls dataEmployees() from employeeModel.php
     function getAllEmployees ()
     {
-        echo 'calling from DASHBOARD';
         $employees = $this->model->dataEmployees(); 
         $this->view->employeeData = $employees;
         $this->view->render('dashboard');

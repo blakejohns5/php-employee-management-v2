@@ -12,9 +12,9 @@ class Router
 
         if (empty($_GET['url']))
         {
-            $fileController = CONTROLLERS . "/main.php";
+            $fileController = CONTROLLERS . "/login.php";
             require_once  $fileController;
-            $controller = new Main();
+            $controller = new Login();
             return false; // ??? How it works?
         }
 

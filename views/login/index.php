@@ -27,7 +27,7 @@
 							<h1>Login</h1>
 						</div>
 					</div>
-                    <form action="src/library/loginController.php" method="POST">
+                    <form action="<?php echo BASE_URL ?>login/loginUser" method="POST">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" name="email"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
                             </div>
-                        </form>
+                    </form>
 				</div>
 			</div>
 
