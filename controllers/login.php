@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 class Login extends Controller
 {
@@ -13,13 +13,16 @@ class Login extends Controller
         $email = $_POST['email'];
         $password = $_POST['password'];
         $dbUser = $this->model->authUser($email, $password);
-
-        if ($dbUser) {
-            header('Location: ' . BASE_URL . 'login');
-            exit();
+        
+        if ($dbUser !== true) {
+            // Unable to solve redirect with header location
+            // header("Location: ./login");
+            echo("<script>location.href = '". BASE_URL . "login';</script>");
         } else {
-            header("Location:" . BASE_URL . "dashboard/getAllEmployees");
-            exit();
+            echo 'redirecting';
+            // Unable to solve redirect with header location
+            // header("Location: ./dashboard/getAllEmployees");
+            echo("<script>location.href = '". BASE_URL . "dashboard/getAllEmployees';</script>");
         }
     }
 }

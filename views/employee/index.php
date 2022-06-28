@@ -1,22 +1,4 @@
-<!-- TODO Employee view -->
-<?php
-// require_once "./library/employeeController.php";
-session_start();
 
-// if(isset($_GET['id'])){
-    
-//     edit($_GET['id']);
-// }
-
-// if(!isset($_SESSION['name'])){
-//   header("Location: ./../index.php");
-// } else {
-//   $name = $_SESSION['name'];
-
-// }
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

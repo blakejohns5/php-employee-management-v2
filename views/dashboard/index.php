@@ -1,6 +1,8 @@
 <?php
-
+session_start();
+print_r($_SESSION);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +15,7 @@
     <script src="<?= BASE_URL ?> assets/js/index.js" defer></script>
     <link rel="stylesheet" href="<?= BASE_URL ?> assets/css/dashboard.css" type="text/css">
 </head>
-<body onload="printTable()">
+<body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

@@ -5,7 +5,7 @@ class LoginModel extends Model
   public function __contruct()
   {
     parent::__construct();
-    session_start();
+    session_start();    
   }
 
   function authUser($email, $password)
@@ -20,12 +20,13 @@ class LoginModel extends Model
           $user = $userData[0];
           if ($email == $user['email'] && password_verify($password, $user['password'])) {
             $_SESSION['userId'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
             return true;
           }
         }
         return false;
      } catch (PDOException $e) {
-        echo 'This user doens´t exist';
+        echo 'This user doesn´t exist';
     }
 }
 
