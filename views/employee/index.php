@@ -1,4 +1,7 @@
-
+<!-- TODO Employee view -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +23,7 @@
     <section class='bg-light rounded ml-5 mr-5 pt-5 pb-5'>
 
       <!-- FORM START -->
-    <form class="my-4 mx-4" action="<?= BASE_URL . 'employee/editEmployee'?>" method= "post">
+    <form class="my-4 mx-4" action="<?= BASE_URL . 'employee/addEmployee'?>" method= "post">
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="firstName">First name</label>

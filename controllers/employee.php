@@ -17,4 +17,11 @@ class Employee extends Controller
         $this->model->update();
         
     }
+
+    function addEmployee() 
+    {
+        $root = getcwd();
+        echo $root;
+        echo 'Adding employee.';
+    }
 }

@@ -53,7 +53,7 @@ session_start();
                 <th></th>
                 <th>
                     
-                    <a href='./employee.php?action=add'><button name="addEmployee" type="submit"  class="btn btn-success" data-toggle="modal" data-target="#infoDisplay"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                    <a href="<?php echo BASE_URL ?>employee"><button name="addEmployee" type="submit"  class="btn btn-success" data-toggle="modal" data-target="#infoDisplay"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
                         <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                         <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
                     </svg>
@@ -68,16 +68,16 @@ session_start();
             foreach ($this->employeeData as $index => $employee) {
               echo "<tr>";
               // echo "<td class='tg-0lax'>" . $employee["id"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["name"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["lastName"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["email"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["gender"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["city"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["streetAddress"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["state"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["age"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["postalCode"] . "</td>";
-              echo "<td class='tg-0lax'>" . $employee["phoneNumber"] . "</td>";
+              echo "<td>" . $employee["name"] . "</td>";
+              echo "<td>" . $employee["lastName"] . "</td>";
+              echo "<td>" . $employee["email"] . "</td>";
+              echo "<td>" . $employee["gender"] . "</td>";
+              echo "<td>" . $employee["city"] . "</td>";
+              echo "<td>" . $employee["streetAddress"] . "</td>";
+              echo "<td>" . $employee["state"] . "</td>";
+              echo "<td>" . $employee["age"] . "</td>";
+              echo "<td>" . $employee["postalCode"] . "</td>";
+              echo "<td>" . $employee["phoneNumber"] . "</td>";
               echo "<td colspan='2' class='tg-0lax'>
               <a class='btn btn-secondary' href='?controller=employee&action=getEmployee&id=" . $employee["id"] . "'>Edit</a>
               <a class='btn btn-danger' href='?controller=employee&action=deleteEmployee&id=" . $employee["id"] . "'>Delete</a>
