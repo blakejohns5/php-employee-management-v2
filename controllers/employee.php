@@ -23,5 +23,6 @@ class Employee extends Controller
         $root = getcwd();
         echo $root;
         echo 'Adding employee.';
+        echo $_POST;
     }
 }

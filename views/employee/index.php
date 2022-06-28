@@ -1,6 +1,7 @@
 <!-- TODO Employee view -->
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,65 +24,65 @@ session_start();
     <section class='bg-light rounded ml-5 mr-5 pt-5 pb-5'>
 
       <!-- FORM START -->
-    <form class="my-4 mx-4" action="<?= BASE_URL . 'employee/addEmployee'?>" method= "post">
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="firstName">First name</label>
-      <input type="text" class="form-control is-valid" name="firstName" id="firstName" placeholder="First name" data-type="input" value='<?php echo $_SESSION['firstName'] ?>' required>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="lastName">Last name</label>
-      <input type="text" class="form-control is-valid" id="lastName" name = "lastName" placeholder="Last name"data-type="input" value='<?php echo $_SESSION['lastName'] ?>' required>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="email">Email</label>
-      <input type="email" class="form-control is-valid" name="email" id="email" placeholder="Email" data-type="input" value='<?php echo $_SESSION['employeeEmail'] ?>' required>
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email. We keep it low key!.</small>
-    </div>
-</div>
-<div class="form-row">
-<div class="col-md-2  mb-2">
-    <label for="age">Age</label>
-      <input type="text" id="age" name="age" pattern="[0-9]{2}" class="form-control is-valid"  placeholder="insert your age" data-type="input" value='<?php echo $_SESSION['age'] ?>' required>
-    </div>
-
-    <div class="col-md-4  mb-2">
-    <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" class="form-control is-valid"  data-type="input" placeholder="666-66-74-31" value='<?php echo $_SESSION['phoneNumber'] ?>' required>
-    </div>
-    <div class="col-md-4  mb-3">
-    <label for="address">Street Address</label>
-      <input type="text" class="form-control is-valid" name="address" value='<?php echo $_SESSION['streetAddress'] ?>' placeholder="Dominguish street" id="address" data-type="input" required>
-    </div>
+    <form class="my-4 mx-4" action="<?php echo BASE_URL . 'employee/addEmployee'?>" method= "post">
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="firstName">First name</label>
+          <input type="text" class="form-control is-valid" name="firstName" id="firstName" placeholder="First name" data-type="input" value="<?php echo isset($_SESSION['firstName']) ? $_SESSION['firstName'] : null ?>">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="lastName">Last name</label>
+          <input type="text" class="form-control is-valid" id="lastName" name = "lastName" placeholder="Last name"data-type="input" value="<?php echo isset($_SESSION['lastName']) ? $_SESSION['lastName'] : null ?>">
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control is-valid" name="email" id="email" placeholder="Email" data-type="input" value="<?php echo isset($_SESSION['employeeEmail']) ? $_SESSION['employeeEmail'] : null ?>">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email. We keep it low key!.</small>
+        </div>
     </div>
     <div class="form-row">
-    <div class="col-md-3 mb-3">
-      <label for="city">City</label>
-      <input type="text" class="form-control is-valid" id="city" name="city" placeholder="City" data-type="input" value='<?php echo $_SESSION['city'] ?>' required>
+    <div class="col-md-2  mb-2">
+        <label for="age">Age</label>
+          <input type="text" id="age" name="age" pattern="[0-9]{2}" class="form-control is-valid"  placeholder="insert your age" data-type="input" value="<?php echo isset($_SESSION['age']) ? $_SESSION['age'] : null ?>">
+        </div>
 
-    </div>
-    <div class="col-md-2 mb-3">
-      <label for="state">State</label>
-      <input type="text" class="form-control is-valid" id="state" name="state" placeholder="State" data-type="input" value='<?php echo $_SESSION['state'] ?>' required>
-    </div>
-    <div class="col-md-1 mb-3">
-      <label for="zip">Zip</label>
-      <input type="text" class="form-control is-valid" id="zip" name="zip"placeholder="Zip" data-type="input" value='<?php echo $_SESSION['postalCode'] ?>' required>
-    </div>
-  </div>
-  <div class="form-row">
-  <div class="col-md-3 mb-5">
-    <select id="gender" name = "gender" data-type="input" value='<?php echo $_SESSION['gender'] ?>' class="custom-select">
-  <option >Choose your gender</option>
-      <option>Male </option>
-	    <option>Female</option>
-	    <option>Somthing else</option>
-    </select>
-    </div>
-    </div>
-  <button class="btn btn-primary" name ="submit" type="submit">Submit form</button>
-  <a href="../src/dashboard.php"><button class="btn btn-secondary" type ="button" name="return" id="return">Go back!</button></a> 
-</form>
-<section>
+        <div class="col-md-4  mb-2">
+        <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" class="form-control is-valid"  data-type="input" placeholder="Phone number" value="<?php echo isset($_SESSION['phoneNumber']) ? $_SESSION['phoneNumber'] : null ?>">
+        </div>
+        <div class="col-md-4  mb-3">
+        <label for="address">Street Address</label>
+          <input type="text" class="form-control is-valid" name="address" value="<?php echo isset($_SESSION['streetAddress']) ? $_SESSION['streetAddress'] : null ?>" placeholder="Dominguish street" id="address" data-type="input" required>
+        </div>
+        </div>
+        <div class="form-row">
+        <div class="col-md-3 mb-3">
+          <label for="city">City</label>
+          <input type="text" class="form-control is-valid" id="city" name="city" placeholder="City" data-type="input" value="<?php echo isset($_SESSION['city']) ? $_SESSION['city'] : null ?>">
+
+        </div>
+        <div class="col-md-2 mb-3">
+          <label for="state">State</label>
+          <input type="text" class="form-control is-valid" id="state" name="state" placeholder="State" data-type="input" value="<?php echo isset($_SESSION['state']) ? $_SESSION['state'] : null ?>">
+        </div>
+        <div class="col-md-1 mb-3">
+          <label for="zip">Zip</label>
+          <input type="text" class="form-control is-valid" id="zip" name="zip"placeholder="Zip" data-type="input" value="<?php echo isset($_SESSION['postalCode']) ? $_SESSION['postalCode'] : null ?>">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-3 mb-5">
+         <select id="gender" name = "gender" data-type="input" value="<?php echo isset($_SESSION['gender']) ? $_SESSION['gender'] : null ?>" class="custom-select">
+            <option >Choose your gender</option>
+            <option>Male </option>
+            <option>Female</option>
+            <option>Somthing else</option>
+          </select>
+       </div>
+      </div>
+      <button class="btn btn-primary" name ="submit" type="submit">Submit form</button>
+      <a href="<?php echo BASE_URL?>dashboard/getAllEmployees"><button class="btn btn-secondary" type ="button" name="return" id="return">Go back!</button></a> 
+    </form>
+  <section>
 </body>
 </html>
