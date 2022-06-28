@@ -52,7 +52,7 @@ session_start();
         </div>
         <div class="col-md-4  mb-3">
         <label for="address">Street Address</label>
-          <input type="text" class="form-control is-valid" name="address" value="<?php echo isset($_SESSION['streetAddress']) ? $_SESSION['streetAddress'] : null ?>" placeholder="Dominguish street" id="address" data-type="input" required>
+          <input type="text" class="form-control is-valid" name="address" value="<?php echo isset($_SESSION['streetAddress']) ? $_SESSION['streetAddress'] : null ?>" placeholder="Dominguish street" id="address" data-type="input">
         </div>
         </div>
         <div class="form-row">
