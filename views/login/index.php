@@ -45,10 +45,7 @@
                             <div class="form-group">
                                 <p class="text-center">Don't have account? <a href="#" id="signup">Sign up here</a></p>
                             </div>
-                    </form>
-                    <div id="btn-div">
-                        <a href="<?php echo BASE_URL ?>/dashboard/getAllEmployees">NEW BTN</a>
-                    </div>
+                    </form>                    
 				</div>
 			</div>
 

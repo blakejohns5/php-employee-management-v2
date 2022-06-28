@@ -1,6 +1,5 @@
 <?php
 session_start();
-print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +29,7 @@ print_r($_SESSION);
       </ul>
       <div class="d-flex justify-content-around">
         <h4>BIENVENIDO </h4>
-        <form method="post" action="./library/loginController.php">
+        <form method="post" action="<?php echo BASE_URL?>dashboard/logoutUser">
             <button class="btn btn-primary" type="submit" name="logout">LOG OUT</button>
         </form>
       </div>
