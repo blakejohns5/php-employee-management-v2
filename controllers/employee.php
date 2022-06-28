@@ -20,9 +20,13 @@ class Employee extends Controller
 
     function addEmployee() 
     {
-        $root = getcwd();
-        echo $root;
         echo 'Adding employee.';
-        echo $_POST;
+        $newEmployee = $_POST;
+        $result = $this->model->addEmployee($newEmployee);
+        if ($result === true) {
+            // Attempt using header return error
+            // header('Location: ' . BASE_URL . 'dashboard/getAllEmployees');
+            echo("<script>location.href = '". BASE_URL . "dashboard/getAllEmployees';</script>");
+        } 
     }
 }
