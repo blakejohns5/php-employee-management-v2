@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 class Login extends Controller
 {
@@ -6,32 +6,20 @@ class Login extends Controller
     {
         parent::__construct();
         $this->view->render('login');
-        // $this->loadModel('login');
     }
 
     function loginUser()
     {
-        // print_r ($_POST); 
         $email = $_POST['email'];
         $password = $_POST['password'];
-        $userDb = $this->model->authUser($email, $password);
+        $dbUser = $this->model->authUser($email, $password);
 
-        if (!$userDb)
-        {
-            header('Location: ' . BASE_URL . '/login');
+        if ($dbUser) {
+            header('Location: ' . BASE_URL . 'login');
             exit();
         } else {
-            header('Location: ' . BASE_URL . '/dashboard/getAllEmployees');
+            header("Location:" . BASE_URL . "dashboard/getAllEmployees");
             exit();
         }
-        
-        
-
-        // if ($_POST['email'] === $userDb['email'])
-        // {
-        //     // echo "post email = userDb email";
-        // };
-        
-        
     }
 }
